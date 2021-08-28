@@ -39,13 +39,12 @@
     </thead>
     <tbody id = 'tableData'></tbody>
     </table>
-  </div>
-
   <br>
   <div id = 'errorMsg'></div>
-  <br>
+  </div>
 
   <div id="customerDetails" style = display:none;>
+    <br>
     <label for="customerName">Enter customer name: </label>
     <input type="text" id="customerName" class="custName">
     <p></p>
@@ -53,16 +52,19 @@
     <input type="text" id="customerNumber" class="custNum">
     <p></p>
     <input type="submit" value="Submit" onclick="addCustomer()">
+    <br>
+    <br>
   </div>
 
-  <br>
+
   <div id="customerRemoval" style = display:none;>
+    <br>
     <label for="serialNumber">S/N to remove: </label>
     <input type="text" id="serialNumber" class="snNum">
     <input type="submit" value="Remove" onclick="removeCustomer()">
+    <br>
+    <br>
   </div>
-
-  <br>
 
   <div>
     <button onclick="makeDefault()">Homepage</button>
