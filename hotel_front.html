@@ -6,6 +6,7 @@
   <title>Offline Hotel Booking System</title>
 
   <style>
+
   html {
     font-family: sans-serif;
   }
@@ -21,6 +22,22 @@
     color: white;
     padding: 3px;
   }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td, th {
+    border: 1px solid #cccccc;
+    padding: 5px
+  }
+
+  tr:nth-child(even){
+    background-color: #e6e8e6;
+  }
+
   </style>
 
   <script>
@@ -53,21 +70,49 @@
       return randid() + '-' + randid() ;
   }
 
-  var serialnum = [];
-  var customer = [];
-  var phonenum = [];
-  var timestamp = [];
+  function createDateTme(){
+    var d = new Date,
+    dformat = [d.getMonth()+1,
+               d.getDate(),
+               d.getFullYear()].join('/')+' '+
+              [d.getHours(),
+               d.getMinutes(),
+               d.getSeconds()].join(':');
+    return dformat;
+  }
+
+  let sortDirection = false;
+  let bookingData = [
+    {id: "test", name: "test", number: "test", time: "test"},
+    {id: "test", name: "test", number: "test", time: "test"}];
+
+  window.onload =()=>{
+    loadTableData(bookingData);
+  }
+
+  function loadTableData(bookingData){
+    const tableBody = document.getElementById('tableData');
+    let dataHTML = '';
+
+    for(let booking of bookingData){
+      dataHTML += `<tr><td>${booking.id}</td><td>${booking.name}</td><td>${booking.number}</td><td>${booking.time}</td></tr>`;
+    }
+
+    tableBody.innerHTML = dataHTML;
+
+  console.log(dataHTML)
+  }
+
 
   function addCustomer(){
-    var id = idGenerator();
-    var name = document.querySelector(".custName").value;
-    var number = document.querySelector(".custName").value;
-    serialnum.push(id);
-    customer.push(name);
-    phonenum.push(number);
+    var id_in = idGenerator();
+    var name_in = document.querySelector(".custName").value;
+    var number_in = document.querySelector(".custNum").value;
+    var time_in = createDateTme();
+    bookingData.push({id: id_in, name: name_in, number: number_in, time: time_in})
     document.getElementById("customerName").value = "";
     document.getElementById("customerNumber").value = "";
-    document.getElementById("table").innerHTML = customer;
+    loadTableData(bookingData);
   }
 
 </script>
@@ -89,7 +134,19 @@
 
   <div id="customerTable">
     Testing Table
-    
+    <p id="table"></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Serial No</th>
+          <th>Name</th>
+          <th>Phone Number</th>
+          <th>TimeStamp</th>
+        </tr>
+    </thead>
+    <tbody id = 'tableData'></tbody>
+    </table>
+
   </div>
 
   <p></p>
