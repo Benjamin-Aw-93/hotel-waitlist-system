@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Offline Hotel Booking System</title>
+
+  <style>
+  html {
+    font-family: sans-serif;
+  }
+
+  body {
+    width: 50%;
+    max-width: 800px;
+    min-width: 480px;
+    margin: 0 auto;
+  }
+
+  .lastResult {
+    color: white;
+    padding: 3px;
+  }
+  </style>
+
+  <script>
+
+  function showCustomer() {
+    var x = document.getElementById("customerDetails");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
+  function showTable() {
+    var x = document.getElementById("customerTable");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
+  function idGenerator() {
+      function randid() {
+          return Math.floor((1 + Math.random()) * 0x10000)
+              .toString(16)
+              .substring(1);
+      }
+      //return id of format 'aaaa'-'aaaa
+      return randid() + '-' + randid() ;
+  }
+
+  var serialnum = [];
+  var customer = [];
+  var phonenum = [];
+  var timestamp = [];
+
+  function addCustomer(){
+    var id = idGenerator();
+    var name = document.querySelector(".custName").value;
+    var number = document.querySelector(".custName").value;
+    serialnum.push(id);
+    customer.push(name);
+    phonenum.push(number);
+    document.getElementById("customerName").value = "";
+    document.getElementById("customerNumber").value = "";
+    document.getElementById("table").innerHTML = customer;
+  }
+
+</script>
+
+</head>
+
+<body>
+  <h1>Hotel Booking System</h1>
+
+  <p>Keeping track of waiting list. Maximum of 25 customers only.</p>
+
+  <div class="form">
+    <button onclick="showCustomer()">Add Customer</button>
+    <button onclick="showTable()">Show/Hide Table</button>
+    <button onclick="removeCustomer()">Remove Customer</button>
+  </div>
+
+  <p></p>
+
+  <div id="customerTable">
+    Testing Table
+    
+  </div>
+
+  <p></p>
+
+  <div id="customerDetails">
+    <label for="customerName">Enter customer name: </label>
+    <input type="text" id="customerName" class="custName">
+    <p></p>
+    <label for="customerNumber">Enter phone number: </label>
+    <input type="text" id="customerNumber" class="custNum">
+    <p></p>
+    <input type="submit" value="Submit" onclick="addCustomer()">
+  </div>
+
+
+</body>
+</html>
