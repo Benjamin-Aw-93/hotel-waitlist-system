@@ -1,0 +1,30 @@
+html {
+  font-family: sans-serif;
+}
+
+body {
+  width: 50%;
+  max-width: 800px;
+  min-width: 480px;
+  margin: 0 auto;
+}
+
+.lastResult {
+  color: white;
+  padding: 3px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #cccccc;
+  padding: 5px
+}
+
+tr:nth-child(even){
+  background-color: #f0f0ef;
+}
