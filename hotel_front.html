@@ -17,14 +17,14 @@
   <p>Keeping track of waiting list. Maximum of 25 customers only.</p>
 
   <div class="form">
-    <button onclick="showCustomer()">Add Customer</button>
     <button onclick="showTable()">Show/Hide Table</button>
-    <button onclick="showremoveCustomer()">Remove Customer</button>
+    <button onclick="showCustomer()">Reserve</button>
+    <button onclick="showremoveCustomer()">Remove</button>
   </div>
 
   <p></p>
 
-  <div id="customerTable">
+  <div id="customerTable" style = display:none;>
     <h2>Waiting List</h2>
     <div id = 'Counter'></div>
     <p id="table"></p>
@@ -45,7 +45,7 @@
   <div id = 'errorMsg'></div>
   <br>
 
-  <div id="customerDetails">
+  <div id="customerDetails" style = display:none;>
     <label for="customerName">Enter customer name: </label>
     <input type="text" id="customerName" class="custName">
     <p></p>
@@ -60,6 +60,12 @@
     <label for="serialNumber">S/N to remove: </label>
     <input type="text" id="serialNumber" class="snNum">
     <input type="submit" value="Remove" onclick="removeCustomer()">
+  </div>
+
+  <br>
+
+  <div>
+    <button onclick="makeDefault()">Homepage</button>
   </div>
 
 </body>

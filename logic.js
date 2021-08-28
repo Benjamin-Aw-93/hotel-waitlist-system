@@ -25,6 +25,15 @@ function showremoveCustomer() {
   }
 }
 
+function makeDefault() {
+  var x = document.getElementById("customerDetails");
+  var y = document.getElementById("customerTable");
+  var z = document.getElementById("customerRemoval");
+    x.style.display = "none";
+    y.style.display = "none";
+    z.style.display = "none";
+}
+
 function idGenerator() {
     function randid() {
         return Math.floor((1 + Math.random()) * 0x10000)
