@@ -1,5 +1,5 @@
-function showCustomer() {
-  var x = document.getElementById("customerDetails");
+function showHide(ID) {
+  var x = document.getElementById(ID);
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
@@ -7,23 +7,6 @@ function showCustomer() {
   }
 }
 
-function showTable() {
-  var x = document.getElementById("customerTable");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-
-function showremoveCustomer() {
-  var x = document.getElementById("customerRemoval");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
 
 function makeDefault() {
   var x = document.getElementById("customerDetails");
