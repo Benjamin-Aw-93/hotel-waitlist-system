@@ -16,15 +16,15 @@
 
   <p>Keeping track of waiting list. Maximum of 25 customers only.</p>
 
-  <div class="form">
-    <button onclick="showHide('customerTable')">Show/Hide Table</button>
-    <button onclick="showHide('customerDetails')">Reserve</button>
-    <button onclick="showHide('customerRemoval')">Remove</button>
+  <div class = boundary>
+    <button class = 'tablink' onclick="showHide('customerTable')">Show/Hide Wait List</button>
+    <button class = 'tablink' onclick="showHide('customerDetails')">Reserve</button>
+    <button class = 'tablink' onclick="showHide('customerRemoval')">Remove</button>
   </div>
 
   <p></p>
 
-  <div id="customerTable" style = display:none;>
+  <div class = boundary id="customerTable" style = display:none;>
     <h2>Waiting List</h2>
     <div id = 'Counter'></div>
     <p id="table"></p>
@@ -43,31 +43,47 @@
   <div id = 'errorMsg'></div>
   </div>
 
-  <div id="customerDetails" style = display:none;>
-    <br>
-    <label for="customerName">Enter customer name: </label>
-    <input type="text" id="customerName" class="custName">
-    <p></p>
-    <label for="customerNumber">Enter phone number: </label>
-    <input type="text" id="customerNumber" class="custNum">
-    <p></p>
-    <input type="submit" value="Submit" onclick="addCustomer()">
-    <br>
-    <br>
+  <div class="form" id="customerDetails" style = display:none;>
+    <div class = 'form__title'>
+      Customer Details
+    </div>
+    <p class = "form__desc">
+      Enter customer name and phone number to be added into our waiting list
+    </p>
+    <div class="form__item">
+      <label for="customerName" class="form__label">Customer Name</label>
+      <input type="text" id="customerName" class="form__input" name=custName placeholder = "Enter customer name">
+    </div>
+    <div class="form__item">
+      <label for="customerNumber" class="form__label">Phone Number</label>
+      <input type="text" id="customerNumber" class="form__input" name=custNum placeholder = "Enter customer number here">
+    </div>
+    <div class="form__item">
+      <button class="form__btn" type = "submit" onclick = "addCustomer()">Submit</button>
+    </div>
   </div>
 
 
-  <div id="customerRemoval" style = display:none;>
-    <br>
-    <label for="serialNumber">S/N to remove: </label>
-    <input type="text" id="serialNumber" class="snNum">
-    <input type="submit" value="Remove" onclick="removeCustomer()">
-    <br>
-    <br>
+  <div class="form" id="customerRemoval" style = display:none;>
+    <div class = 'form__title'>
+      Remove customer
+    </div>
+    <p class = "form__desc">
+      Remove a customer who has been seated
+    </p>
+    <div class="form__item">
+      <label for="serialNumber" class="form__label">S/N to remove</label>
+      <input type="text" id="serialNumber" class="form__input" name=snNum placeholder = "Enter booking serial number here">
+    </div>
+    <div class="form__item">
+      <button class="form__btn" type = "submit" onclick = "removeCustomer()">Remove</button>
+      <button class="auto_form__btn" type = "submit" onclick = "popCustomer()">Auto seat next customer</button>
+    </div>
   </div>
 
   <div>
-    <button onclick="makeDefault()">Homepage</button>
+    <br>
+    <button class="homepage__btn" onclick="makeDefault()">Homepage</button>
   </div>
 
 </body>

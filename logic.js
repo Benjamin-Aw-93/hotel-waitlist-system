@@ -7,7 +7,6 @@ function showHide(ID) {
   }
 }
 
-
 function makeDefault() {
   var x = document.getElementById("customerDetails");
   var y = document.getElementById("customerTable");
@@ -59,8 +58,8 @@ function countingCustomer(){
 function addCustomer(){
   if(bookingData.length < 25){
     var id_in = idGenerator();
-    var name_in = document.querySelector(".custName").value;
-    var number_in = document.querySelector(".custNum").value;
+    var name_in = document.getElementById("customerName").value;
+    var number_in = document.getElementById("customerNumber").value;
     var time_in = createDateTme();
     bookingData.push({id: id_in, name: name_in, number: number_in, time: time_in})
     document.getElementById("customerName").value = "";
@@ -80,14 +79,22 @@ function loadErrorMessage(Msg){
 }
 
 function removeCustomer(){
-  var id_remove = document.querySelector(".snNum").value;
+  var id_remove = document.getElementById("serialNumber").value;
   let index = bookingData.findIndex(({id}) => id == id_remove)
   if(index > -1){
     bookingData.splice(index, 1);
     document.getElementById("errorMsg").textContent = "";
+    document.getElementById("serialNumber").value = "";
   }else{
     loadErrorMessage('ID not found!');
   }
+  loadTableData(bookingData);
+  countingCustomer();
+}
+
+
+function popCustomer(){
+  bookingData.shift();
   loadTableData(bookingData);
   countingCustomer();
 }
