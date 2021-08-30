@@ -7,6 +7,21 @@ function showHide(ID) {
   }
 }
 
+function showHideSwap(ID, ID1){
+  var x = document.getElementById(ID);
+  var y = document.getElementById(ID1);
+  if (y.style.display === "block" && x.style.display === "none"){
+    y.style.display = "none";
+    x.style.display = "block";
+  } else if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+
+
 function makeDefault() {
   var x = document.getElementById("customerDetails");
   var y = document.getElementById("customerTable");
@@ -97,4 +112,5 @@ function popCustomer(){
   bookingData.shift();
   loadTableData(bookingData);
   countingCustomer();
+  document.getElementById("errorMsg").textContent = "";
 }
