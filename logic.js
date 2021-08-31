@@ -1,3 +1,4 @@
+/* Hide and show elements on click */
 function showHide(ID) {
   var x = document.getElementById(ID);
   if (x.style.display === "none") {
@@ -7,6 +8,7 @@ function showHide(ID) {
   }
 }
 
+/* Making sure that only Add or Remove form cannot be shown together*/
 function showHideSwap(ID, ID1){
   var x = document.getElementById(ID);
   var y = document.getElementById(ID1);
@@ -21,7 +23,7 @@ function showHideSwap(ID, ID1){
 }
 
 
-
+/* Function for homepage */
 function makeDefault() {
   var x = document.getElementById("customerDetails");
   var y = document.getElementById("customerTable");
@@ -31,6 +33,7 @@ function makeDefault() {
     z.style.display = "none";
 }
 
+/* Function to generate ID */
 function idGenerator() {
     function randid() {
         return Math.floor((1 + Math.random()) * 0x10000)
@@ -41,6 +44,7 @@ function idGenerator() {
     return randid() + '-' + randid() ;
 }
 
+/* Function to generate date time */
 function createDateTme(){
   var d = new Date,
   dformat = [d.getMonth()+1,
@@ -52,6 +56,7 @@ function createDateTme(){
   return dformat;
 }
 
+/* To create HTML for table*/
 let bookingData = [];
 
 function loadTableData(bookingData){
@@ -65,6 +70,7 @@ function loadTableData(bookingData){
   tableBody.innerHTML = dataHTML;
 }
 
+/* functions to manage customers movement and count */
 function countingCustomer(){
   document.getElementById("Counter").textContent = "Current Capacity: " + bookingData.length + "/25";
   document.getElementById("Counter").style.color = "black";
@@ -84,13 +90,6 @@ function addCustomer(){
   } else{
     loadErrorMessage("Reached maximum limit. Remove a customer now.");
   }
-}
-
-function loadErrorMessage(Msg){
-  console.log("test")
-  document.getElementById("errorMsg").textContent = Msg;
-  document.getElementById("errorMsg").style.color = "red";
-  document.getElementById("Counter").style.color = "red";
 }
 
 function removeCustomer(){
@@ -113,4 +112,12 @@ function popCustomer(){
   loadTableData(bookingData);
   countingCustomer();
   document.getElementById("errorMsg").textContent = "";
+}
+
+/* functions to populate error message */
+function loadErrorMessage(Msg){
+  console.log("test")
+  document.getElementById("errorMsg").textContent = Msg;
+  document.getElementById("errorMsg").style.color = "red";
+  document.getElementById("Counter").style.color = "red";
 }

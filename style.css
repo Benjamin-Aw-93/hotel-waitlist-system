@@ -1,3 +1,4 @@
+/* Standardise page */
 html {
   font-family: sans-serif;
   font-size: 16px
@@ -10,6 +11,7 @@ body {
   margin: 0 auto;
 }
 
+/* Changing cursor when hover over button */
 button {
   cursor: pointer;
 }
@@ -19,6 +21,7 @@ button {
     line-height: 1.5;
 }
 
+/* Changing top 3 buttons to look like tabs*/
 .tablink {
   background-color: #555;
   color: white;
@@ -32,6 +35,7 @@ button {
   background-color: #777;
 }
 
+/* Styling for table */
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -44,13 +48,14 @@ td, th {
 }
 
 th {
-  background-color: #f9f9f9;
-}
-
-tr:nth-child(even){
   background-color: #f0f0ef;
 }
 
+tr:nth-child(even){
+  background-color: #f9f9f9;
+}
+
+/* Styling for submission forms*/
 .form {
   font-family: sans-serif;
 }
@@ -107,6 +112,7 @@ tr:nth-child(even){
   color: #bbbbbb;
 }
 
+/* Styling for submission button*/
 .form__btn {
   font-family: sans-serif;
   font-weight: 600;
@@ -123,6 +129,7 @@ tr:nth-child(even){
   outline: none;
 }
 
+/* To make button feel more reactive*/
 .form__btn:active {
   color:#2266ee;
   background: #ffffff;
@@ -140,4 +147,10 @@ tr:nth-child(even){
   background: #ffffff;
   border: 2px solid #1258e5;
   border-radius: 5px;
+}
+
+.auto_form__btn:active{
+  color: #ffffff;
+  background: #2266ee;
+  border: 2px solid #1258e5;
 }

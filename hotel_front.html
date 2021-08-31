@@ -16,16 +16,19 @@
 
   <p>Keeping track of waiting list. Maximum of 25 customers only.</p>
 
+  <!-- Adding three main buttons to webpage -->
   <div class = boundary>
     <button class = 'tablink' onclick="showHide('customerTable')">Show/Hide Wait List</button>
     <button class = 'tablink' onclick="showHideSwap('customerDetails', 'customerRemoval')">Reserve</button>
     <button class = 'tablink' onclick="showHideSwap('customerRemoval', 'customerDetails')">Remove</button>
   </div>
 
-  <p></p>
+  <br>
 
+  <!-- creating the table -->
   <div class = boundary id="customerTable" style = display:none;>
     <h2>Waiting List</h2>
+    <!-- creating a counter to keep track of total numebr of people in the queue -->
     <div id = 'Counter'></div>
     <p id="table"></p>
     <table>
@@ -40,9 +43,12 @@
     <tbody id = 'tableData'></tbody>
     </table>
   <br>
+  <!-- creating text box to keep track of error messages -->
   <div id = 'errorMsg'></div>
   </div>
 
+
+  <!-- creating the form to enter customer details, including name and phone number -->
   <div class="form" id="customerDetails" style = display:none;>
     <div class = 'form__title'>
       Customer Details
@@ -63,7 +69,7 @@
     </div>
   </div>
 
-
+  <!-- creating a field for staff to remove customers after being seated-->
   <div class="form" id="customerRemoval" style = display:none;>
     <div class = 'form__title'>
       Remove customer
@@ -78,6 +84,7 @@
     <div class="form__item">
       <button class="form__btn" type = "submit" onclick = "removeCustomer()">Remove</button>
     </div>
+    <!-- creating a button for staff to remove next immediate customer -->
     <p class = "form__desc">
       Seat the next immediate customer
     </p>
